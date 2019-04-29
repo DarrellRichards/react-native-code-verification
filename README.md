@@ -4,7 +4,7 @@ An UI module for user-side pincode verification.
 
 ## Getting started
 
-`$ npm i react-native-code-verification --s`
+`$ npm i react-native-code-verification-v2 --s`
 
 ### Props
 | Name | Type | Description | Default |

@@ -67,7 +67,9 @@ export default class App extends Component {
       this.updateEmpties();
     }
 
-    return this.props.currentEnteredNumber(num);
+    if (this.props.currentEnteredNumber) {
+      return this.props.currentEnteredNumber(num);
+    }
   };
 
   joinElements = () => {
@@ -94,7 +96,9 @@ export default class App extends Component {
 
   closeView() {
     this.updateEmpties();
-    return this.props.onCloseView()
+    if (this.props.onCloseView) {
+      return this.props.onCloseView()
+    }
   }
 
   renderItemCell = ({ item, index }) => {
@@ -147,7 +151,7 @@ export default class App extends Component {
           ))}
         </View>
         <View style={[styles.textView, styles.centerAlignment]}>
-          <Text style={[styles.instruction, { color: textColor || 'gray'}]>
+          <Text style={[styles.instruction, { color: textColor || 'gray'}]}>
             {this.props.descriptionText || 'Please enter pincode for entry'}
           </Text>
         </View>
